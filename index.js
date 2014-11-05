@@ -1,4 +1,10 @@
-module.exports = function (elem, cb) {
+module.exports = function (elem, opts, cb) {
+    if (typeof opts === 'function') {
+        cb = opts;
+        opts = {};
+    }
+    if (typeof opts === 'string') opts = { type: opts };
+    
     elem.addEventListener('change', function (ev) {
         if (elem.files.length === 0) return cb([]);
         
@@ -9,8 +15,7 @@ module.exports = function (elem, cb) {
         reader.addEventListener('load', function (e) {
             results.push({
                 file: elem.files[index],
-                target: e.target,
-                source: e.target.result
+                target: e.target
             });
             index ++;
             if (index === elem.files.length) cb(results)
@@ -19,7 +24,14 @@ module.exports = function (elem, cb) {
         read(index);
         
         function read (index) {
-            reader.readAsText(elem.files[index]);
+            var file = elem.files[index];
+            if (opts.type === 'text') {
+                reader.readAsText(file);
+            }
+            else if (opts.type === 'url') {
+                reader.readAsDataURL(file);
+            }
+            else reader.readAsArrayBuffer(file);
         }
     });
 };
