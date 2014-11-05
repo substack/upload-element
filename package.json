@@ -1,0 +1,34 @@
+{
+  "name": "upload-element",
+  "version": "1.0.0",
+  "description": "read files from html `<input type=\"file\">` elements",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^3.0.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/upload-element.git"
+  },
+  "homepage": "https://github.com/substack/upload-element",
+  "keywords": [
+    "browser",
+    "file",
+    "upload",
+    "input",
+    "form",
+    "filereader",
+    "html",
+    "dom"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT"
+}

@@ -1,6 +1,6 @@
 # upload-element
 
-read files from html file upload buttons
+read files from html `<input type="file">` elements
 
 # example
 
