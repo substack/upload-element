@@ -6,7 +6,7 @@ module.exports = function (elem, opts, cb) {
     if (typeof opts === 'string') opts = { type: opts };
     
     elem.addEventListener('change', function (ev) {
-        if (elem.files.length === 0) return cb([]);
+        if (elem.files.length === 0) return cb(null, []);
         
         var reader = new FileReader;
         var index = 0;
@@ -18,7 +18,7 @@ module.exports = function (elem, opts, cb) {
                 target: e.target
             });
             index ++;
-            if (index === elem.files.length) cb(results)
+            if (index === elem.files.length) cb(null, results)
             else read(index)
         });
         read(index);
