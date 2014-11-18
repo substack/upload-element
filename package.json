@@ -1,6 +1,6 @@
 {
   "name": "upload-element",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "read files from html `<input type=\"file\">` elements",
   "main": "index.js",
   "dependencies": {},
