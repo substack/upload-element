@@ -19,7 +19,7 @@ First write some html with an `<input type="file">` element:
 var upload = require('upload-element');
 
 var elem = document.querySelector('#upload')
-upload(elem, { type: 'text' }, function (files) {
+upload(elem, { type: 'text' }, function (err, files) {
     files.forEach(function (file) {
         document.bodyinnerHTML += file.target.result;
     });
